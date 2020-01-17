@@ -1,9 +1,13 @@
 package com.ratel.es.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 /**
  * @业务描述：
@@ -15,13 +19,17 @@ import org.springframework.data.elasticsearch.annotations.Document;
  */
 @Data
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @Document(indexName="myes",type="myuser",refreshInterval="-1")
 public class User {
     @Id
     private Integer id;
-    private String es_first_name;
-    private String last_name;
+    private String firstName;
+    private String lastName;
     private  Integer age;
-    private String es_about;
+    //type 为字段类型
+    @Field(type = FieldType.Keyword)
+    private String About;
 
 }
