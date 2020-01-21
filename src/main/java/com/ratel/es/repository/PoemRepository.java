@@ -17,6 +17,7 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
   *@create_time： 2020/1/12 15:40
   */  
 public interface PoemRepository extends ElasticsearchRepository<Poem, String> {
+
     @Query("{\"bool\" : {\"must\" : {\"wildcard\" : {\"title\" : \"?\"}}}}")
     Page<Poem> findByTitle(String title, Pageable pageable);
 
