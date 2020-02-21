@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @业务描述：
@@ -69,6 +70,8 @@ public class UserController {
 
             for (User entity : userListMysql ) {
                 IndexQuery indexQuery = new IndexQuery();
+                //这个地方就是设置主键id，当前你也可以换成其他字段,或者uuid
+                //indexQuery.setId(UUID.randomUUID().toString());
                 indexQuery.setId(entity.getId().toString());
                 indexQuery.setObject(entity);
                 indexQuery.setIndexName("myes");

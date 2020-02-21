@@ -23,7 +23,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @AllArgsConstructor
 @Document(indexName="myes",type="myuser",refreshInterval="-1")
 public class User {
-    @Id
+    @Id // 这个id加不加都不影响导入
     private Integer id;
     private String firstName;
     private String lastName;
