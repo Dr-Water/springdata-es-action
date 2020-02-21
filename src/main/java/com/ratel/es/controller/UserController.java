@@ -70,7 +70,7 @@ public class UserController {
 
             for (User entity : userListMysql ) {
                 IndexQuery indexQuery = new IndexQuery();
-                //这个地方就是设置主键id，当前你也可以换成其他字段,或者uuid
+                //这个地方就是设置主键id，当前你也可以换成其他字段,或者uuid,这个地方默认使用id作为_id的值，即使实体类上不加@Id注解
                 //indexQuery.setId(UUID.randomUUID().toString());
                 indexQuery.setId(entity.getId().toString());
                 indexQuery.setObject(entity);
