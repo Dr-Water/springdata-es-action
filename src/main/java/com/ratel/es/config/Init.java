@@ -26,7 +26,7 @@ public class Init {
     @Autowired
     PoemRepository poemRepository;
 
-    @PostConstruct
+   // @PostConstruct
     public void init() {
         long startTime = System.currentTimeMillis();
         logger.info("开始初始化数据,");

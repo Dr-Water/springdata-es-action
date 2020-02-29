@@ -28,8 +28,7 @@ public class User {
     private String firstName;
     private String lastName;
     private  Integer age;
-    //type 为字段类型
+    //type 为字段类型 字段名首字母不能大写 例如不能写成： About 不然有可能往es中导入不了数据
     @Field(type = FieldType.Keyword)
-    private String About;
-
+    private String about;
 }
